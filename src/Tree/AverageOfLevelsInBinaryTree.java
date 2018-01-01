@@ -2,6 +2,7 @@ package Tree;
 
 //
 // 需要使用long型整数 long sum = 0
+// List<Double>
 //
 public class AverageOfLevelsInBinaryTree {
 	public List<Double> averageOfLevels(TreeNode root) {

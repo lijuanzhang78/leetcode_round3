@@ -1,7 +1,8 @@
 package Tree;
 
 // 这道题可以bfs，也可以dfs，bfs很好想
-// 注意看看dfs的解法，每次先traverse右节点，如果没有右节点就traverse左节点
+// 注意看看dfs的解法，左右子树必须要traverse！（与boundary of binayr tree那道题不同）右子树优先
+// 使用depth variable
 //
 public class BinaryTreeRightsideView {
 	public List<Integer> rightSideView_bfs(TreeNode root) {

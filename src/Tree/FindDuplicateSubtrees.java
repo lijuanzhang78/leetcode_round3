@@ -1,5 +1,9 @@
 package Tree;
 
+// 把每个node和它的左右子树都用postorder traversal变成一个string
+// map.values();
+// map.keyset();
+//
 public class FindDuplicateSubtrees {
 	public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         Map<String,List<TreeNode>> map = new HashMap<>();
