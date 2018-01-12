@@ -3,7 +3,8 @@ package BFS;
 // BFS,每一位加一减一都是当前字符串的adjacency
 // 对于deadends，在poll之后才check
 // 记得记得对于每次加入queue的字符串，把他们加入visited!!!!
-//
+// 需要explicit cast int to char --- (char)(arr[j] - 1)
+// 
 public class OpenTheLock {
 	public int openLock(String[] deadends, String target) {
         if (target == null || target.length() == 0) return 0;
