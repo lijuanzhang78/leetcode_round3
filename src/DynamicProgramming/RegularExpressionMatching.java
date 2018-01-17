@@ -14,6 +14,8 @@ package DynamicProgramming;
 //           直到字符不相等。
 //      -(3) 如果p的首字符为“.”， 那么“.*”可以与任何字符相匹配
 
+// 细节：s.substring(i), 当i = s.length(), 返回的是空
+
 
 public class RegularExpressionMatching {
 	public boolean isMatch(String s, String p) {
