@@ -1,6 +1,7 @@
 package BinarySearch;
 
-//参考topcoder里面binary search的文章
+// 参考topcoder里面binary search的文章
+// the answer should exist between [1,n]
 //
 public class ArrangeCoins {
 	public int arrangeCoins(int n) {
