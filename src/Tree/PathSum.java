@@ -14,6 +14,7 @@ public class PathSum {
         }
         
         if (root.left != null) {
+        	// put the return value of recursion inside if statement is very good practice.
             if (helper(root.left, sum - root.val)) return true;
         }
         if (root.right != null) {

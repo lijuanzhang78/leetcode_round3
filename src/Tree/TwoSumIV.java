@@ -15,5 +15,21 @@ public class TwoSumIV {
         set.add(root.val);
         return findTarget(root.left,k,set) || findTarget(root.right,k,set);
     }
+    
+// 也可以inorder
+    public boolean findTarget(TreeNode root, int k) {
+        if (root == null) return false;
+        Set<Integer> set = new HashSet<>();
+        return findTargetHelper(root,k,set);
+    }
+    
+    boolean findTargetHelper(TreeNode root, int k, Set<Integer> set) {
+        if (root == null) return false;
+        if (findTargetHelper(root.left,k,set)) return true;
+        if (set.contains(k-root.val)) return true;
+        set.add(root.val);
+        if (findTargetHelper(root.right,k,set)) return true;
+        return false;
+    }
 
 }

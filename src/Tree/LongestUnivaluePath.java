@@ -36,5 +36,32 @@ public class LongestUnivaluePath {
 	        max = Math.max(left+right,max);
 	        return Math.max(left,right);
 	    }
+	    
+	    // second simpler way
+	    //
+	    int max = Integer.MIN_VALUE;
+	    public int longestUnivaluePath(TreeNode root) {
+	        if (root == null) return 0;
+	        longestPath(root);
+	        return max-1;
+	    }
+	    
+	    int longestPath(TreeNode root) {
+	        if (root == null) return 0;
+	        int left = longestPath(root.left);
+	        int right = longestPath(root.right);
+	        int res = 1; // at least 1
+	        if (root.left != null && root.left.val == root.val) {
+	            res = Math.max(res, left+1);
+	        }
+	        if (root.right != null &&  root.right.val == root.val) {
+	            res = Math.max(res, right+1);
+	        }
+	        max = Math.max(res,max);
+	        if (root.left != null && root.right != null && root.left.val == root.val && root.right.val == root.val) {
+	            max = Math.max(max,left+right+1);
+	        }
+	        return res;
+	    }
 
 }

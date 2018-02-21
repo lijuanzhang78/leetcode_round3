@@ -22,5 +22,25 @@ public class ConstructStringFromBinaryTree {
         if (right.length() != 0) sb.append("("+right+")");
         return sb.toString();
     }
+	
+	// 第二次写是这样的，第一次写的更简洁
+	public String tree2str(TreeNode t) {
+        if (t == null) return "";
+        StringBuilder sb = new StringBuilder();
+        sb.append(t.val);
+        if (t.left == null && t.right == null) return sb.toString();
+        sb.append("(");
+        String left = tree2str(t.left);
+        sb.append(left);
+        sb.append(")");
+        
+        if (t.left != null && t.right == null) return sb.toString();
+        sb.append("(");
+        String right = tree2str(t.right);
+        sb.append(right);
+        sb.append(")");
+        
+        return sb.toString();
+    }
 
 }
